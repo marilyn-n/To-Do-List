@@ -4,8 +4,14 @@ const router = express.Router();
 const Item = require('../models/Item');
 
 router.get('/new-list', (req, res) => {
-  console.log('logrado');
-  res.render('new-list');
+  Item.find({})
+    .then((result) => {
+      console.log('logrado');
+      console.log(result);
+      res.render('new-list', result);
+      console.log('mira');
+    })
+    .catch(() => console.log('error'));
 });
 
 router.post('/new-list', (req, res) => {
