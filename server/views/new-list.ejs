@@ -13,28 +13,38 @@
 
   <h1>My List</h1>
   <form action="/new-list" method="POST">
-    <span onclick="addLine()">
+    <span class="plus" onclick="addLine()">
       <i class="fa fa-plus"></i>
     </span>
-    <span onclick="removeLine()">
+    <span class="trash" onclick="removeLine()">
       <i class="fa fa-trash"></i>
     </span>
-    <!-- <input placeholder="insert text" type="text" name="itemName"> -->
+    <input id="inputDefault" placeholder="insert text" type="text" name="itemName">
     <button class="add" type="submit">Save</button>
     <ul id="item-list" style="list-style:none;">
         <li>
-          <input placeholder="insert text" type="text" name="itemName" required>
+          <input placeholder="insert text" type="text" name="itemName">
         </li>
       </ul>
   </form>
   <div></div>
+  
 
   <script type="text/javascript">
+    // $("input[type='text']").keypress(function(event) {
+    //   if (event.which === 13) {
+    //     //grabbing new todo text from input
+    //     var todoText = $(this).val();
+    //     $(this).val("");
+    //   }
+    // });
+
     var addLine = function () {
       var el = document.createElement('li');
-      el.innerHTML = '<input placeholder="insert text" type="text" name="itemName" required> ';
+      el.innerHTML = '<span class="trash" onclick="removeLine()"><i class="fa fa-trash"></i><input id="inputDefault" placeholder="insert text" type="text" name="itemName">';
       document.getElementById('item-list').appendChild(el);
     }
+
     var removeLine = function () {
       var list = document.getElementById('item-list')
       list.removeChild(list.childNodes[0]);

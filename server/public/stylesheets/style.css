@@ -29,7 +29,8 @@ input{
 
 .add{
   position: relative;
-  left: 500px;
+  top: 400px;
+  left: 370px;
   padding: 5px 20px;
   background-color: burlywood;
   border-radius: 5px;
@@ -52,4 +53,23 @@ span{
   position: relative;
   top: 100px;
   left: 200px;
+}
+
+.plus{
+  position: relative;
+  left: 660px;
+  top:135px;
+}
+
+.trash{
+  position: relative;
+  left: 450px;
+  top: 135px;
+}
+
+#inputDefault{
+  position: relative;
+  top: 136px;
+  left:470px;
+
 }
